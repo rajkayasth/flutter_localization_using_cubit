@@ -14,51 +14,44 @@ class LanguageScreen extends StatelessWidget {
       ),
       body: SizedBox(
         width: double.infinity,
-        child: BlocConsumer<LocalizationCubit, ChangeLocaleState>(
-          listener: (context, state) {
-
-          },
-          builder: (context, state) {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    context.read<LocalizationCubit>().changeLanguage("hi");
-                  },
-                  child: const Text(
-                    "Hindi-हिंदी",
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                context.read<LocalizationCubit>().changeLanguage("hi");
+              },
+              child: const Text(
+                "Hindi-हिंदी",
+                style: TextStyle(
+                  fontSize: 14,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    context.read<LocalizationCubit>().changeLanguage("en");
-                  },
-                  child: const Text(
-                    "English ---- English",
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.read<LocalizationCubit>().changeLanguage("en");
+              },
+              child: const Text(
+                "English ---- English",
+                style: TextStyle(
+                  fontSize: 14,
                 ),
-                ElevatedButton(
-                  onPressed: () {
-                    context.read<LocalizationCubit>().changeLanguage("ar");
-                  },
-                  child: const Text(
-                    "Arabic ---عربي",
-                    style: TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                context.read<LocalizationCubit>().changeLanguage("ar");
+              },
+              child: const Text(
+                "Arabic ---عربي",
+                style: TextStyle(
+                  fontSize: 14,
                 ),
-              ],
-            );
-          },
+              ),
+            ),
+          ],
         ),
       ),
     );
